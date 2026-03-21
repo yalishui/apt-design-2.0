@@ -623,6 +623,9 @@ function createDateCard(item, category) {
         const lateDays = daysUntil(item.lateDeadline);
         details += `<div class="date-row"><span class="date-label">Late deadline:</span><span>${item.lateDeadline} (${lateDays} days)</span></div>`;
     }
+    if (item.link) {
+        details += `<div class="date-row"><a href="${item.link}" target="_blank" class="date-link">🔗 More Information →</a></div>`;
+    }
 
     const categoryBadge = {
         holiday: '🏙️ HK Holiday',

@@ -29,15 +29,53 @@ const importantDates = {
 
     // 2026 UCAT Key Dates (UK time)
     ucatDates: [
-        { name: "UCAT 2026 Registration Opens", date: "2026-05-12", time: "09:30", note: "Bursary & Access Arrangements also open" },
-        { name: "UCAT Booking Opens", date: "2026-06-23", time: "06:00", note: "Book your test slot" },
-        { name: "UCAT Testing Period Begins", date: "2026-07-13", note: "First test date" },
-        { name: "Access Arrangements Deadline", date: "2026-09-10", time: "15:00", note: "Special exam arrangements deadline" },
-        { name: "UCAT Registration Deadline", date: "2026-09-16", time: "15:00", note: "Last day to register" },
-        { name: "UCAT Booking Deadline", date: "2026-09-16", time: "15:00", note: "Last day to book test" },
-        { name: "UCAS Application Deadline", date: "2026-10-15", note: "For Medicine/Dentistry 2027 entry" },
-        { name: "UCAT Results Delivered to Universities", date: "2026-11-01", note: "Early November" }
+        { name: "UCAT 2026 Registration Opens", date: "2026-05-12", time: "09:30", note: "Bursary & Access Arrangements also open", link: "https://www.ucat.ac.uk/ucat/ucat-registration/", priority: "high" },
+        { name: "UCAT Booking Opens", date: "2026-06-23", time: "06:00", note: "Book your test slot", link: "https://www.ucat.ac.uk/ucat/ucat-booking/", priority: "high" },
+        { name: "UCAT Testing Period Begins", date: "2026-07-13", note: "First test date", link: "https://www.ucat.ac.uk/ucat/ucat-test-dates/", priority: "normal" },
+        { name: "Access Arrangements Deadline", date: "2026-09-10", time: "15:00", note: "Special exam arrangements deadline", link: "https://www.ucat.ac.uk/ucat/access-arrangements/", priority: "high" },
+        { name: "UCAT Registration Deadline", date: "2026-09-16", time: "15:00", note: "Last day to register", link: "https://www.ucat.ac.uk/ucat/ucat-registration/", priority: "critical" },
+        { name: "UCAT Booking Deadline", date: "2026-09-16", time: "15:00", note: "Last day to book test", link: "https://www.ucat.ac.uk/ucat/ucat-booking/", priority: "critical" },
+        { name: "UCAS Application Deadline", date: "2026-10-15", note: "For Medicine/Dentistry 2027 entry", link: "https://www.ucas.com/undergraduate/apply-and-track/when-apply", priority: "critical" },
+        { name: "UCAT Results Delivered to Universities", date: "2026-11-01", note: "Early November", link: "https://www.ucat.ac.uk/ucat/ucat-results/", priority: "normal" }
     ],
+
+    // UCAT Information and Resources
+    ucatInfo: {
+        overview: "The University Clinical Aptitude Test (UCAT) is a required entrance exam for most medical and dental schools in the UK, Australia, and New Zealand.",
+        structure: [
+            { section: "Verbal Reasoning", time: "21 mins", questions: "44 questions", description: "Assesses ability to critically evaluate written information" },
+            { section: "Decision Making", time: "31 mins", questions: "29 questions", description: "Evaluates logic and problem-solving skills using text, diagrams, and tables" },
+            { section: "Quantitative Reasoning", time: "24 mins", questions: "36 questions", description: "Tests numerical reasoning and problem-solving with math concepts" },
+            { section: "Abstract Reasoning", time: "12 mins", questions: "55 questions", description: "Assesses ability to identify patterns and relationships in shapes" },
+            { section: "Situational Judgment", time: "26 mins", questions: "69 questions", description: "Evaluates understanding of real-world medical scenarios and professionalism" }
+        ],
+        fees: [
+            { category: "Standard UK/EU Fee", amount: "£75", note: "For tests taken in the UK or EU" },
+            { category: "Standard International Fee", amount: "£120", note: "For tests taken outside the UK/EU" },
+            { category: "Bursary", amount: "Free", note: "For eligible students with financial need", link: "https://www.ucat.ac.uk/ucat/ucat-bursary/" }
+        ],
+        resources: [
+            { name: "Official UCAT Website", url: "https://www.ucat.ac.uk/", description: "Official information, registration, and test booking" },
+            { name: "UCAT Practice Tests", url: "https://www.ucat.ac.uk/ucat/practice-tests/", description: "Free official practice tests and question banks" },
+            { name: "UCAT Preparation Guide", url: "https://www.ucat.ac.uk/ucat/ucat-preparation/", description: "Official preparation materials and tips" },
+            { name: "UCAT Bursary Scheme", url: "https://www.ucat.ac.uk/ucat/ucat-bursary/", description: "Financial support for eligible students" },
+            { name: "UCAT Access Arrangements", url: "https://www.ucat.ac.uk/ucat/access-arrangements/", description: "Special accommodations for disabilities" }
+        ],
+        testCenters: [
+            "Hong Kong - British Council",
+            "Singapore - IDP Education",
+            "Multiple centers across UK",
+            "International centers available worldwide"
+        ],
+        tips: [
+            "Start preparing at least 4-6 weeks before your test date",
+            "Take full-length practice tests under timed conditions",
+            "Focus on your weakest sections first",
+            "Learn time management strategies for each section",
+            "Review official practice materials thoroughly",
+            "Book early to secure your preferred date and location"
+        ]
+    },
 
     // 2026 SAT Test Dates (US Eastern Time)
     satDates: [
