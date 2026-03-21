@@ -91,55 +91,116 @@ const importantDates = {
 
     // 2026 IELTS Test Dates (Academic & General Training - Hong Kong)
     ieltsDates: [
-        { name: "IELTS Test: January 10", date: "2026-01-10", note: "Paper-based & Computer-delivered" },
-        { name: "IELTS Test: January 17", date: "2026-01-17", note: "Computer-delivered only" },
-        { name: "IELTS Test: January 24", date: "2026-01-24", note: "Paper-based" },
-        { name: "IELTS Test: February 7", date: "2026-02-07", note: "Paper-based" },
-        { name: "IELTS Test: February 14", date: "2026-02-14", note: "Computer-delivered only" },
-        { name: "IELTS Test: February 21", date: "2026-02-21", note: "Paper-based" },
-        { name: "IELTS Test: February 28", date: "2026-02-28", note: "Computer-delivered only" },
-        { name: "IELTS Test: March 7", date: "2026-03-07", note: "Paper-based" },
-        { name: "IELTS Test: March 14", date: "2026-03-14", note: "Computer-delivered only" },
-        { name: "IELTS Test: March 21", date: "2026-03-21", note: "Paper-based" },
-        { name: "IELTS Test: March 28", date: "2026-03-28", note: "Computer-delivered only" },
-        { name: "IELTS Test: April 4", date: "2026-04-04", note: "Paper-based" },
-        { name: "IELTS Test: April 11", date: "2026-04-11", note: "Computer-delivered only" },
-        { name: "IELTS Test: April 18", date: "2026-04-18", note: "Paper-based" },
-        { name: "IELTS Test: April 25", date: "2026-04-25", note: "Computer-delivered only" },
-        { name: "IELTS Test: May 2", date: "2026-05-02", note: "Paper-based" },
-        { name: "IELTS Test: May 9", date: "2026-05-09", note: "Computer-delivered only" },
-        { name: "IELTS Test: May 16", date: "2026-05-16", note: "Paper-based" },
-        { name: "IELTS Test: May 23", date: "2026-05-23", note: "Computer-delivered only" },
-        { name: "IELTS Test: May 30", date: "2026-05-30", note: "Paper-based" },
-        { name: "IELTS Test: June 6", date: "2026-06-06", note: "Computer-delivered only" },
-        { name: "IELTS Test: June 13", date: "2026-06-13", note: "Paper-based" },
-        { name: "IELTS Test: June 20", date: "2026-06-20", note: "Computer-delivered only" },
-        { name: "IELTS Test: June 27", date: "2026-06-27", note: "Paper-based" },
-        { name: "IELTS Test: July 4", date: "2026-07-04", note: "Computer-delivered only" },
-        { name: "IELTS Test: July 11", date: "2026-07-11", note: "Paper-based" },
-        { name: "IELTS Test: July 18", date: "2026-07-18", note: "Computer-delivered only" },
-        { name: "IELTS Test: July 25", date: "2026-07-25", note: "Paper-based" },
-        { name: "IELTS Test: August 1", date: "2026-08-01", note: "Computer-delivered only" },
-        { name: "IELTS Test: August 8", date: "2026-08-08", note: "Paper-based" },
-        { name: "IELTS Test: August 15", date: "2026-08-15", note: "Computer-delivered only" },
-        { name: "IELTS Test: August 22", date: "2026-08-22", note: "Paper-based" },
-        { name: "IELTS Test: August 29", date: "2026-08-29", note: "Computer-delivered only" },
-        { name: "IELTS Test: September 5", date: "2026-09-05", note: "Paper-based" },
-        { name: "IELTS Test: September 12", date: "2026-09-12", note: "Computer-delivered only" },
-        { name: "IELTS Test: September 19", date: "2026-09-19", note: "Paper-based" },
-        { name: "IELTS Test: September 26", date: "2026-09-26", note: "Computer-delivered only" },
-        { name: "IELTS Test: October 3", date: "2026-10-03", note: "Paper-based" },
-        { name: "IELTS Test: October 10", date: "2026-10-10", note: "Computer-delivered only" },
-        { name: "IELTS Test: October 17", date: "2026-10-17", note: "Paper-based" },
-        { name: "IELTS Test: October 24", date: "2026-10-24", note: "Computer-delivered only" },
-        { name: "IELTS Test: October 31", date: "2026-10-31", note: "Paper-based" },
-        { name: "IELTS Test: November 7", date: "2026-11-07", note: "Computer-delivered only" },
-        { name: "IELTS Test: November 14", date: "2026-11-14", note: "Paper-based" },
-        { name: "IELTS Test: November 21", date: "2026-11-21", note: "Computer-delivered only" },
-        { name: "IELTS Test: November 28", date: "2026-11-28", note: "Paper-based" },
-        { name: "IELTS Test: December 5", date: "2026-12-05", note: "Computer-delivered only" },
-        { name: "IELTS Test: December 12", date: "2026-12-12", note: "Paper-based" }
-    ]
+        { name: "IELTS Test: January 10", date: "2026-01-10", note: "Paper-based & Computer-delivered", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: January 17", date: "2026-01-17", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: January 24", date: "2026-01-24", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: February 7", date: "2026-02-07", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: February 14", date: "2026-02-14", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: February 21", date: "2026-02-21", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: February 28", date: "2026-02-28", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: March 7", date: "2026-03-07", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: March 14", date: "2026-03-14", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: March 21", date: "2026-03-21", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: March 28", date: "2026-03-28", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: April 4", date: "2026-04-04", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: April 11", date: "2026-04-11", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: April 18", date: "2026-04-18", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: April 25", date: "2026-04-25", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: May 2", date: "2026-05-02", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: May 9", date: "2026-05-09", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: May 16", date: "2026-05-16", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: May 23", date: "2026-05-23", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: May 30", date: "2026-05-30", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: June 6", date: "2026-06-06", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: June 13", date: "2026-06-13", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: June 20", date: "2026-06-20", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: June 27", date: "2026-06-27", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: July 4", date: "2026-07-04", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: July 11", date: "2026-07-11", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: July 18", date: "2026-07-18", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: July 25", date: "2026-07-25", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: August 1", date: "2026-08-01", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: August 8", date: "2026-08-08", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: August 15", date: "2026-08-15", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: August 22", date: "2026-08-22", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: August 29", date: "2026-08-29", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: September 5", date: "2026-09-05", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: September 12", date: "2026-09-12", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: September 19", date: "2026-09-19", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: September 26", date: "2026-09-26", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: October 3", date: "2026-10-03", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: October 10", date: "2026-10-10", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: October 17", date: "2026-10-17", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: October 24", date: "2026-10-24", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: October 31", date: "2026-10-31", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: November 7", date: "2026-11-07", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: November 14", date: "2026-11-14", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: November 21", date: "2026-11-21", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: November 28", date: "2026-11-28", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: December 5", date: "2026-12-05", note: "Computer-delivered only", link: "https://ielts.britishcouncil.org/", priority: "normal" },
+        { name: "IELTS Test: December 12", date: "2026-12-12", note: "Paper-based", link: "https://ielts.britishcouncil.org/", priority: "normal" }
+    ],
+
+    // IELTS Information and Resources
+    ieltsInfo: {
+        overview: "IELTS (International English Language Testing System) is the world's most popular English language test for study, work, and migration. Recognized by over 10,000 organizations worldwide.",
+        testTypes: [
+            { 
+                name: "IELTS Academic", 
+                description: "For people applying for higher education or professional registration in an English-speaking environment",
+                whoShouldTake: ["University admission", "Professional registration", "Academic research"]
+            },
+            { 
+                name: "IELTS General Training", 
+                description: "For those migrating to English-speaking countries for secondary education, work experience, or training programs",
+                whoShouldTake: ["Immigration", "Work visa", "Secondary education", "Training programs"]
+            }
+        ],
+        structure: [
+            { section: "Listening", time: "30 mins", questions: "40 questions", description: "Assesses understanding of spoken English through recordings" },
+            { section: "Reading", time: "60 mins", questions: "40 questions", description: "Evaluates reading comprehension with various text types" },
+            { section: "Writing", time: "60 mins", questions: "2 tasks", description: "Tests writing skills through descriptive and analytical tasks" },
+            { section: "Speaking", time: "11-14 mins", questions: "3 parts", description: "Face-to-face interview assessing spoken English proficiency" }
+        ],
+        scoring: {
+            band: "0-9 scale",
+            description: "Each section is scored 0-9, overall score is average of all sections",
+            goodScores: {
+                university: "6.0-7.5",
+                competitive: "7.0-8.0",
+                professional: "7.0-8.5"
+            }
+        },
+        fees: [
+            { category: "Academic (Paper-based)", amount: "HK$2,600", note: "Hong Kong price, subject to change" },
+            { category: "Academic (Computer-delivered)", amount: "HK$2,600", note: "Hong Kong price, subject to change" },
+            { category: "General Training (Paper-based)", amount: "HK$2,600", note: "Hong Kong price, subject to change" },
+            { category: "General Training (Computer-delivered)", amount: "HK$2,600", note: "Hong Kong price, subject to change" }
+        ],
+        resources: [
+            { name: "British Council IELTS", url: "https://ielts.britishcouncil.org/", description: "Official IELTS information, registration, and test booking" },
+            { name: "IDP IELTS", url: "https://www.ieltsidpindia.com/", description: "Official IELTS information and test booking" },
+            { name: "IELTS Official Website", url: "https://www.ielts.org/", description: "Global IELTS information and resources" },
+            { name: "Free Practice Tests", url: "https://www.ielts.org/for-test-takers/sample-test-questions", description: "Official sample questions and practice materials" },
+            { name: "IELTS Prep App", url: "https://www.ielts.org/prepare-and-practise", description: "Mobile app for on-the-go preparation" }
+        ],
+        testFormats: [
+            { name: "Paper-based", duration: "2h 45m + Speaking", features: ["Pen and paper test", "Results in 13 days", "Available on specific dates"] },
+            { name: "Computer-delivered", duration: "2h 45m + Speaking", features: ["Computer interface", "Results in 3-5 days", "More test dates available"] }
+        ],
+        tips: [
+            "Understand the test format and question types thoroughly",
+            "Practice with official IELTS materials to familiarize yourself with the test",
+            "Time management is crucial - practice under timed conditions",
+            "For Writing, read and understand the task requirements carefully",
+            "For Speaking, be confident and express yourself clearly",
+            "For Reading, skim passages first, then answer specific questions",
+            "For Listening, read questions before audio starts",
+            "Take advantage of computer-delivered IELTS for faster results",
+            "Book your test well in advance to get your preferred date",
+            "Check specific score requirements for your target institution"
+        ]
+    }
 };
 
 // Helper function to format date for display

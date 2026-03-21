@@ -1413,12 +1413,443 @@ header h1 {
     text-align: center;
 }
 
+/* IELTS Information Section */
+.ielts-info-section {
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.ielts-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ielts-header h2 {
+    color: #10B981;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.ielts-overview {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.ielts-quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.ielts-link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background: var(--bg-white);
+    border: 2px solid #10B981;
+    border-radius: 8px;
+    color: #10B981;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.ielts-link-btn:hover {
+    background: #10B981;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.ielts-link-btn.primary {
+    background: #10B981;
+    color: white;
+}
+
+.ielts-link-btn.primary:hover {
+    background: #059669;
+}
+
+/* IELTS Test Types */
+.ielts-test-types {
+    margin-bottom: 2rem;
+}
+
+.ielts-test-types h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.test-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.test-type-card {
+    background: var(--bg-white);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    border: 3px solid;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.test-type-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.test-type-card.academic {
+    border-color: #3B82F6;
+}
+
+.test-type-card.general {
+    border-color: #F59E0B;
+}
+
+.test-type-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.test-type-card h4 {
+    color: var(--text);
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.test-type-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.test-type-uses {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.test-type-uses li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.test-type-uses li::before {
+    content: "✓ ";
+    color: inherit;
+    font-weight: 700;
+}
+
+/* IELTS Structure */
+.ielts-structure {
+    margin-bottom: 2rem;
+}
+
+.ielts-structure h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.ielts-sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.ielts-section-card {
+    background: var(--bg-white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #10B981;
+}
+
+.ielts-section-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.15);
+}
+
+.ielts-section-card .section-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.ielts-section-card h4 {
+    color: var(--text);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.ielts-section-card .section-time {
+    color: #10B981;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.ielts-section-card .section-questions {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.ielts-section-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* IELTS Scoring */
+.ielts-scoring {
+    margin-bottom: 2rem;
+}
+
+.ielts-scoring h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.scoring-info {
+    background: var(--bg-white);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.scoring-description {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.scoring-description p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.score-reference {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.score-card {
+    background: var(--bg-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 2px solid;
+}
+
+.score-card.university {
+    border-color: #3B82F6;
+}
+
+.score-card.competitive {
+    border-color: #F59E0B;
+}
+
+.score-card.professional {
+    border-color: #10B981;
+}
+
+.score-card h4 {
+    color: var(--text);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.score-range {
+    color: var(--text);
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+/* IELTS Formats */
+.ielts-formats {
+    margin-bottom: 2rem;
+}
+
+.ielts-formats h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.formats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.format-card {
+    background: var(--bg-white);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    border: 3px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.format-card:hover {
+    border-color: #10B981;
+    transform: translateY(-4px);
+}
+
+.format-card.highlight {
+    border-color: #10B981;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: white;
+}
+
+.format-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.format-card h4 {
+    color: var(--text);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.format-card.highlight h4 {
+    color: white;
+}
+
+.format-duration {
+    color: #10B981;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.format-card.highlight .format-duration {
+    color: white;
+}
+
+.format-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.format-features li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.format-features li::before {
+    content: "• ";
+    color: #10B981;
+    font-weight: 700;
+}
+
+.format-card.highlight .format-features li {
+    color: white;
+}
+
+.format-card.highlight .format-features li::before {
+    color: white;
+}
+
+/* IELTS Fees */
+.ielts-fees {
+    margin-bottom: 2rem;
+}
+
+.ielts-fees h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.fee-note {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* IELTS Resources */
+.ielts-resources {
+    margin-bottom: 2rem;
+}
+
+.ielts-resources h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* IELTS Tips */
+.ielts-tips {
+    margin-bottom: 2rem;
+}
+
+.ielts-tips h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.ielts-tips .tips-list {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.ielts-tips .tips-list li {
+    border-left-color: #10B981;
+}
+
+/* IELTS Dates Section */
+.ielts-dates-section {
+    margin-top: 2rem;
+}
+
+.ielts-dates-section h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
 .date-card.sat {
     border-left-color: #F59E0B;
 }
 
 .date-card.birthday {
     border-left-color: #EC4899;
+}
+
+.date-card.ielts {
+    border-left-color: #10B981;
 }
 
 .date-card.note {
