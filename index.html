@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>APT - Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <h1>📅 APT</h1>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Calendar Panel -->
+            <div class="calendar-panel full-width">
+                <section class="calendar-section">
+                    <div class="calendar-header">
+                        <h2>Important Dates</h2>
+                        <div class="calendar-tabs">
+                            <button class="tab-btn active" data-tab="all">All</button>
+                            <button class="tab-btn" data-tab="canadian">🇨🇦 Canadian</button>
+                            <button class="tab-btn" data-tab="holidays">🏙️ HK</button>
+                            <button class="tab-btn" data-tab="ucat">📚 UCAT</button>
+                            <button class="tab-btn" data-tab="sat">✍️ SAT</button>
+                            <button class="tab-btn" data-tab="ielts">🌍 IELTS</button>
+                            <button class="tab-btn" data-tab="birthdays">🎂</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="calendar-content">
+                        <div id="allDates" class="tab-content active">
+                            <div class="dates-list" id="allDatesList"></div>
+                        </div>
+                        <div id="canadianTab" class="tab-content">
+                            <!-- Canadian Colleges Sub-Tabs -->
+                            <div class="sub-tabs">
+                                <button class="sub-tab-btn active" data-subtab="canadian-all">All</button>
+                                <button class="sub-tab-btn" data-subtab="canadian-ubc">UBC</button>
+                                <button class="sub-tab-btn" data-subtab="canadian-mcgill">McGill</button>
+                                <button class="sub-tab-btn" data-subtab="canadian-uoft">UofT</button>
+                                <button class="sub-tab-btn" data-subtab="canadian-waterloo">Waterloo</button>
+                            </div>
+                            <div class="sub-tab-content">
+                                <div id="canadian-all" class="sub-tab-list active">
+                                    <div class="view-toggle">
+                                        <button class="view-btn active" data-view="label">Label View</button>
+                                        <button class="view-btn" data-view="detail">Detail View</button>
+                                    </div>
+                                    <div class="dates-list" id="canadianAllList"></div>
+                                </div>
+                                <div id="canadian-ubc" class="sub-tab-list">
+                                    <div class="view-toggle">
+                                        <button class="view-btn active" data-view="label">Label View</button>
+                                        <button class="view-btn" data-view="detail">Detail View</button>
+                                    </div>
+                                    <div class="dates-list" id="canadianUBCList"></div>
+                                </div>
+                                <div id="canadian-mcgill" class="sub-tab-list">
+                                    <div class="view-toggle">
+                                        <button class="view-btn active" data-view="label">Label View</button>
+                                        <button class="view-btn" data-view="detail">Detail View</button>
+                                    </div>
+                                    <div class="dates-list" id="canadianMcGillList"></div>
+                                </div>
+                                <div id="canadian-uoft" class="sub-tab-list">
+                                    <div class="view-toggle">
+                                        <button class="view-btn active" data-view="label">Label View</button>
+                                        <button class="view-btn" data-view="detail">Detail View</button>
+                                    </div>
+                                    <div class="dates-list" id="canadianUofTList"></div>
+                                </div>
+                                <div id="canadian-waterloo" class="sub-tab-list">
+                                    <div class="view-toggle">
+                                        <button class="view-btn active" data-view="label">Label View</button>
+                                        <button class="view-btn" data-view="detail">Detail View</button>
+                                    </div>
+                                    <div class="dates-list" id="canadianWaterlooList"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="holidaysTab" class="tab-content">
+                            <div class="dates-list" id="holidaysList"></div>
+                        </div>
+                        <div id="ucatTab" class="tab-content">
+                            <div class="dates-list" id="ucatList"></div>
+                        </div>
+                        <div id="satTab" class="tab-content">
+                            <div class="dates-list" id="satList"></div>
+                        </div>
+                        <div id="ieltsTab" class="tab-content">
+                            <div class="dates-list" id="ieltsList"></div>
+                        </div>
+                        <div id="birthdaysTab" class="tab-content">
+                            <div class="dates-list" id="birthdaysList"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Application Detail Modal -->
+        <div id="appDetailModal" class="modal-overlay" style="display: none !important;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="appDetailTitle">Application Details</h2>
+                    <button id="closeAppModal" class="close-btn">✕</button>
+                </div>
+                <div id="appDetailBody" class="modal-body">
+                    <!-- Application details will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Canadian College Detail Modal -->
+        <div id="canadianDetailModal" class="modal-overlay" style="display: none !important;">
+            <div class="modal-content large-modal">
+                <div class="modal-header">
+                    <h2 id="canadianDetailTitle">College Details</h2>
+                    <button id="closeCanadianModal" class="close-btn">✕</button>
+                </div>
+                <div id="canadianDetailBody" class="modal-body">
+                    <!-- Canadian college details will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="important-dates.js"></script>
+    <script src="college-apps.js"></script>
+    <script src="canadian-colleges-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
