@@ -373,14 +373,17 @@ function createUniversityDetailCard(university) {
                     ${university.location} • ${university.applicationMethod}
                 </div>
             </div>
-            <span class="app-status status-in-progress">Active</span>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.4rem;">
+                <span class="app-status status-in-progress">Sep 2027 Entry</span>
+                <span style="font-size:0.78rem;color:var(--text-secondary);">Cycle 2026-2027</span>
+            </div>
         </div>
 
         <div style="margin: 1rem 0;">
             <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
                 Upcoming Deadlines:
             </div>
-            ${upcomingDates.map(date => `
+            ${upcomingDates.length > 0 ? upcomingDates.map(date => `
                 <div style="display: flex; justify-content: space-between; align-items: center;
                            padding: 0.5rem; background: var(--bg-secondary); border-radius: 6px; margin-bottom: 0.5rem;
                            border-left: 3px solid ${date.importance === 'critical' ? 'var(--danger)' :
@@ -397,7 +400,7 @@ function createUniversityDetailCard(university) {
                         ${date.daysLeft}d
                     </div>
                 </div>
-            `).join('')}
+            `).join('') : '<div style="font-size:0.9rem;color:var(--text-secondary);padding:0.5rem;">Application cycle opens Oct 2026. Check back then!</div>'}
         </div>
 
         <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">

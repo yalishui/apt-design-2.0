@@ -2,11 +2,107 @@
 // UBC, McGill, University of Toronto, University of Waterloo
 // Data collected on March 21, 2026
 // Focus: Undergraduate Life Science Programs (Bachelor's Degree)
+// Target Admission: September 2027 Entry
+// Major Application Period: Q3-Q4 2026
 // Auto-update frequency: Weekly check recommended
 
 const CanadianUniversities = {
     lastUpdated: '2026-03-21',
     updateFrequency: 'weekly',
+    admissionYear: 2027,
+    applicationPeriod: 'Q3-Q4 2026',
+    programStart: 'September 2027',
+
+    // 2027 Admission Timeline Overview
+    admissionTimeline: {
+        overview: 'Canadian university applications for September 2027 entry typically begin in Q3 2026 and extend through Q4 2026, with most deadlines between January-March 2027. This timeline focuses on the key periods for major Canadian universities.',
+        phases: [
+            {
+                period: 'Q3 2026 (July-September)',
+                phase: 'Preparation Phase',
+                activities: [
+                    'Research universities and programs',
+                    'Review admission requirements',
+                    'Prepare application materials',
+                    'Take standardized tests (IELTS, UCAT, SAT)',
+                    'Gather transcripts and references'
+                ],
+                importance: 'high'
+            },
+            {
+                period: 'October 2026',
+                phase: 'Application Opening',
+                activities: [
+                    'UBC application system opens (Oct 1)',
+                    'McGill application system opens (Oct 1)',
+                    'OUAC application system opens (Oct 1)',
+                    'University of Waterloo applications open',
+                    'Start submitting applications'
+                ],
+                importance: 'critical',
+                note: 'Most applications open on October 1, 2026'
+            },
+            {
+                period: 'November 2026 - December 2026',
+                phase: 'Early Application & Scholarship Phase',
+                activities: [
+                    'Submit early applications (recommended for international students)',
+                    'UBC International Scholars deadline (Nov 17)',
+                    'University of Toronto early deadline (Nov 7)',
+                    'Scholarship applications (various deadlines in Dec)',
+                    'Submit supporting documents'
+                ],
+                importance: 'high',
+                note: 'Early submission strongly recommended for international applicants'
+            },
+            {
+                period: 'January 2027 - February 2027',
+                phase: 'Main Application Phase',
+                activities: [
+                    'UBC Vancouver deadline (Jan 15) - CRITICAL',
+                    'University of Toronto main deadline',
+                    'McGill main deadline (Feb 1)',
+                    'University of Waterloo main deadline (Feb 1)',
+                    'Ensure all documents submitted'
+                ],
+                importance: 'critical',
+                note: 'Most regular deadlines fall in January-February 2027'
+            },
+            {
+                period: 'March 2027 - May 2027',
+                phase: 'Review & Decision Phase',
+                activities: [
+                    'Applications reviewed by universities',
+                    'Admission decisions released',
+                    'Scholarship offers sent',
+                    'Respond to offers by deadline'
+                ],
+                importance: 'high'
+            },
+            {
+                period: 'June 2027 - August 2027',
+                phase: 'Preparation Phase',
+                activities: [
+                    'Accept admission offers',
+                    'Apply for student visa (if international)',
+                    'Arrange housing',
+                    'Complete enrollment',
+                    'Prepare for September start'
+                ],
+                importance: 'medium'
+            },
+            {
+                period: 'September 2027',
+                phase: 'Program Start',
+                activities: [
+                    'Programs begin',
+                    'Orientation activities',
+                    'Classes start'
+                ],
+                importance: 'critical'
+            }
+        ]
+    },
     dataSources: {
         ubc: {
             name: 'University of British Columbia',
@@ -40,8 +136,8 @@ const CanadianUniversities = {
             location: 'Vancouver, British Columbia',
             type: 'Undergraduate Program',
             program: 'Bachelor of Science (BSc) - Life Sciences',
-            targetEntry: 'September 2026',
-            applicationCycle: '2025-2026',
+            targetEntry: 'September 2027',
+            applicationCycle: '2026-2027',
             applicationMethod: 'Direct (UBC Portal)',
 
             // Website Links
@@ -55,45 +151,45 @@ const CanadianUniversities = {
                 housing: 'https://housing.ubc.ca/'
             },
 
-            // Key Dates
+            // Key Dates for September 2027 Entry
             keyDates: [
                 {
                     event: 'Application System Opens',
-                    date: '2025-10-01',
+                    date: '2026-10-01',
                     time: null,
                     timezone: 'Pacific Time (PT)',
                     importance: 'high',
-                    notes: 'Online application system becomes available for winter/summer terms',
+                    notes: 'Online application system becomes available for September 2027 entry',
                     actionLink: 'https://you.ubc.ca/'
                 },
                 {
                     event: 'International Scholarship Deadline',
-                    date: '2025-11-17',
+                    date: '2026-11-17',
                     time: '11:59 PM',
                     timezone: 'Pacific Time (PT)',
-                    importance: 'medium',
-                    notes: 'UBC International Scholars Program application deadline'
+                    importance: 'high',
+                    notes: 'UBC International Scholars Program application deadline - APPLY EARLY!'
                 },
                 {
                     event: 'Scholarship Application Deadline',
-                    date: '2025-12-01',
+                    date: '2026-12-01',
                     time: '11:59 PM',
                     timezone: 'Pacific Time (PT)',
-                    importance: 'medium',
+                    importance: 'high',
                     notes: 'Deadline for Presidential Scholars, Major Entrance Awards, etc.'
                 },
                 {
                     event: 'Main Application Deadline (Vancouver)',
-                    date: '2026-01-15',
+                    date: '2027-01-15',
                     time: '11:59 PM',
                     timezone: 'Pacific Time (PT)',
                     importance: 'critical',
-                    notes: 'Winter term application deadline - Vancouver campus',
+                    notes: 'Winter term application deadline - Vancouver campus - DO NOT MISS',
                     actionLink: 'https://you.ubc.ca/applying-ubc/how-to-apply/'
                 },
                 {
                     event: 'Main Application Deadline (Okanagan)',
-                    date: '2026-03-31',
+                    date: '2027-03-31',
                     time: '11:59 PM',
                     timezone: 'Pacific Time (PT)',
                     importance: 'critical',
@@ -101,7 +197,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'English Language Proficiency Deadline',
-                    date: '2026-02-15',
+                    date: '2027-02-15',
                     time: '11:59 PM',
                     timezone: 'Pacific Time (PT)',
                     importance: 'critical',
@@ -110,7 +206,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'International Documents Deadline',
-                    date: '2026-03-15',
+                    date: '2027-03-15',
                     time: '11:59 PM',
                     timezone: 'Pacific Time (PT)',
                     importance: 'critical',
@@ -119,7 +215,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'High School Course Completion',
-                    date: '2026-06-30',
+                    date: '2027-06-30',
                     time: null,
                     timezone: 'Pacific Time (PT)',
                     importance: 'critical',
@@ -127,7 +223,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Accept Offer Deadline',
-                    date: '2026-05-01',
+                    date: '2027-05-01',
                     time: '11:59 PM',
                     timezone: 'Pacific Time (PT)',
                     importance: 'critical',
@@ -135,7 +231,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Housing Application Deadline',
-                    date: '2026-05-01',
+                    date: '2027-05-01',
                     time: '11:59 PM',
                     timezone: 'Pacific Time (PT)',
                     importance: 'high',
@@ -144,11 +240,11 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Program Start',
-                    date: '2026-09-01',
+                    date: '2027-09-01',
                     time: null,
                     timezone: 'Pacific Time (PT)',
                     importance: 'high',
-                    notes: 'Fall semester begins - early September'
+                    notes: 'Fall semester begins - early September 2027'
                 }
             ],
 
@@ -157,7 +253,7 @@ const CanadianUniversities = {
                 {
                     step: 1,
                     title: 'Research Programs & Prepare',
-                    timeline: 'August - October 2025',
+                    timeline: 'July - September 2026',
                     details: [
                         'Explore UBC Science programs',
                         'Review admission requirements',
@@ -174,7 +270,7 @@ const CanadianUniversities = {
                 {
                     step: 2,
                     title: 'Submit Application',
-                    timeline: 'October 1, 2025 - January 15, 2026',
+                    timeline: 'October 1, 2026 - January 15, 2027',
                     details: [
                         'Create UBC applicant account',
                         'Complete online application',
@@ -183,7 +279,7 @@ const CanadianUniversities = {
                         'Select program choices'
                     ],
                     actionItems: [
-                        'Submit application by January 15, 11:59 PM PT',
+                        'Submit application by January 15, 2027 11:59 PM PT',
                         'Pay application fee (~$120 CAD)',
                         'Complete personal profile',
                         'Select Science program and specializations',
@@ -193,15 +289,15 @@ const CanadianUniversities = {
                 {
                     step: 3,
                     title: 'Submit Supporting Documents',
-                    timeline: 'By February 15, 2026',
+                    timeline: 'By February 15, 2027',
                     details: [
                         'Submit English language test scores',
                         'Submit international transcripts',
                         'Verify document receipt in portal'
                     ],
                     actionItems: [
-                        'Submit IELTS/TOEFL scores by February 15',
-                        'Submit international transcripts by March 15',
+                        'Submit IELTS/TOEFL scores by February 15, 2027',
+                        'Submit international transcripts by March 15, 2027',
                         'Check document status in Applicant Service Centre',
                         'Ensure all requirements are complete'
                     ]
@@ -209,7 +305,7 @@ const CanadianUniversities = {
                 {
                     step: 4,
                     title: 'Wait for Application Review',
-                    timeline: 'January - April 2026',
+                    timeline: 'January - April 2027',
                     details: [
                         'Application materials reviewed',
                         'Academic assessment',
@@ -224,7 +320,7 @@ const CanadianUniversities = {
                 {
                     step: 5,
                     title: 'Complete High School Requirements',
-                    timeline: 'By June 30, 2026',
+                    timeline: 'By June 30, 2027',
                     details: [
                         'Complete all required courses',
                         'Maintain strong grades',
@@ -240,7 +336,7 @@ const CanadianUniversities = {
                 {
                     step: 6,
                     title: 'Receive & Accept Admission Decision',
-                    timeline: 'April - May 2026',
+                    timeline: 'April - May 2027',
                     details: [
                         'Receive admission decision',
                         'Review offer details',
@@ -250,23 +346,23 @@ const CanadianUniversities = {
                     actionItems: [
                         'Monitor portal for admission decision',
                         'Review offer letter and conditions',
-                        'Accept offer and pay deposit by deadline',
+                        'Accept offer and pay deposit by May 1, 2027',
                         'Apply for first-year housing'
                     ]
                 },
                 {
                     step: 7,
                     title: 'Prepare for Enrollment',
-                    timeline: 'June - August 2026',
+                    timeline: 'June - August 2027',
                     details: [
                         'Register for courses',
                         'Complete orientation',
                         'Pay tuition'
                     ],
                     actionItems: [
-                        'Register for first-year courses (June)',
+                        'Register for first-year courses (June 2027)',
                         'Complete orientation program',
-                        'Pay first installment of tuition (September)',
+                        'Pay first installment of tuition (September 2027)',
                         'Prepare for move-in'
                     ]
                 }
@@ -322,8 +418,8 @@ const CanadianUniversities = {
             location: 'Montreal, Quebec',
             type: 'Undergraduate Program',
             program: 'Bachelor of Science (BSc) - Life Sciences',
-            targetEntry: 'September 2026',
-            applicationCycle: '2025-2026',
+            targetEntry: 'September 2027',
+            applicationCycle: '2026-2027',
             applicationMethod: 'Direct (McGill Portal)',
 
             // Website Links
@@ -337,29 +433,29 @@ const CanadianUniversities = {
                 housing: 'https://www.mcgill.ca/residences/'
             },
 
-            // Key Dates
+            // Key Dates for September 2027 Entry
             keyDates: [
                 {
                     event: 'Application System Opens',
-                    date: '2025-10-01',
+                    date: '2026-10-01',
                     time: null,
                     timezone: 'Eastern Time (ET)',
                     importance: 'high',
-                    notes: 'Online application system becomes available',
+                    notes: 'Online application system becomes available for September 2027 entry',
                     actionLink: 'https://www.mcgill.ca/undergraduate-admissions/apply'
                 },
                 {
                     event: 'Early Application Deadline (International)',
-                    date: '2026-01-15',
+                    date: '2027-01-15',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'high',
-                    notes: 'Recommended deadline for international applicants',
+                    notes: 'Recommended deadline for international applicants - APPLY EARLY!',
                     actionLink: 'https://www.mcgill.ca/undergraduate-admissions/apply'
                 },
                 {
                     event: 'Main Application Deadline (Most Programs)',
-                    date: '2026-02-01',
+                    date: '2027-02-01',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -368,15 +464,15 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Scholarship Application Deadline',
-                    date: '2026-02-15',
+                    date: '2027-02-15',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
-                    importance: 'medium',
+                    importance: 'high',
                     notes: 'Major entrance scholarship application deadline'
                 },
                 {
                     event: 'Supporting Documents Deadline',
-                    date: '2026-03-15',
+                    date: '2027-03-15',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -385,7 +481,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Admission Decisions Begin',
-                    date: '2026-03-01',
+                    date: '2027-03-01',
                     time: null,
                     timezone: 'Eastern Time (ET)',
                     importance: 'high',
@@ -393,7 +489,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Final Admission Decisions',
-                    date: '2026-05-15',
+                    date: '2027-05-15',
                     time: null,
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -401,7 +497,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Accept Offer Deadline',
-                    date: '2026-06-01',
+                    date: '2027-06-01',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -409,11 +505,11 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Program Start',
-                    date: '2026-09-01',
+                    date: '2027-09-01',
                     time: null,
                     timezone: 'Eastern Time (ET)',
                     importance: 'high',
-                    notes: 'Fall semester begins'
+                    notes: 'Fall semester begins - September 2027'
                 }
             ],
 
@@ -422,7 +518,7 @@ const CanadianUniversities = {
                 {
                     step: 1,
                     title: 'Determine Eligibility & Prepare',
-                    timeline: 'August - October 2025',
+                    timeline: 'July - September 2026',
                     details: [
                         'Identify your education background',
                         'Review program requirements',
@@ -439,7 +535,7 @@ const CanadianUniversities = {
                 {
                     step: 2,
                     title: 'Submit Application',
-                    timeline: 'October 1, 2025 - February 1, 2026',
+                    timeline: 'October 1, 2026 - February 1, 2027',
                     details: [
                         'Create McGill applicant account',
                         'Complete online application',
@@ -447,7 +543,7 @@ const CanadianUniversities = {
                         'Select program choices'
                     ],
                     actionItems: [
-                        'Submit application by February 1, 11:59 PM ET',
+                        'Submit application by February 1, 2027 11:59 PM ET',
                         'Pay application fee ($136.08 CAD for first program)',
                         'Select Life Sciences program',
                         'Submit second program choice for free (if applicable)'
@@ -456,7 +552,7 @@ const CanadianUniversities = {
                 {
                     step: 3,
                     title: 'Submit Supporting Documents',
-                    timeline: 'By March 15, 2026',
+                    timeline: 'By March 15, 2027',
                     details: [
                         'Submit official transcripts',
                         'Submit English test scores',
@@ -472,13 +568,13 @@ const CanadianUniversities = {
                 {
                     step: 4,
                     title: 'Apply for Scholarships (Optional)',
-                    timeline: 'By February 15, 2026',
+                    timeline: 'By February 15, 2027',
                     details: [
                         'Submit scholarship application',
                         'Submit required essays/letters'
                     ],
                     actionItems: [
-                        'Apply for major entrance scholarships by February 15',
+                        'Apply for major entrance scholarships by February 15, 2027',
                         'Submit scholarship essays',
                         'Request reference letters (if required)'
                     ]
@@ -486,7 +582,7 @@ const CanadianUniversities = {
                 {
                     step: 5,
                     title: 'Application Review',
-                    timeline: 'February - May 2026',
+                    timeline: 'February - May 2027',
                     details: [
                         'Applications reviewed',
                         'Academic assessment',
@@ -501,7 +597,7 @@ const CanadianUniversities = {
                 {
                     step: 6,
                     title: 'Receive & Accept Admission Decision',
-                    timeline: 'March - June 2026',
+                    timeline: 'March - June 2027',
                     details: [
                         'Receive admission offer',
                         'Review offer details',
@@ -511,21 +607,21 @@ const CanadianUniversities = {
                     actionItems: [
                         'Monitor Minerva for admission decision',
                         'Review offer letter and conditions',
-                        'Accept offer by June 1 deadline',
+                        'Accept offer by June 1, 2027 deadline',
                         'Apply for on-campus housing'
                     ]
                 },
                 {
                     step: 7,
                     title: 'Prepare for Enrollment',
-                    timeline: 'June - August 2026',
+                    timeline: 'June - August 2027',
                     details: [
                         'Register for courses',
                         'Complete orientation',
                         'Pay tuition'
                     ],
                     actionItems: [
-                        'Register for courses (opens in summer)',
+                        'Register for courses (opens summer 2027)',
                         'Complete orientation program',
                         'Pay tuition deposit',
                         'Prepare for move-in'
@@ -585,8 +681,8 @@ const CanadianUniversities = {
             location: 'Toronto, Ontario',
             type: 'Undergraduate Program',
             program: 'Bachelor of Science (HBSc) - Life Sciences',
-            targetEntry: 'September 2026',
-            applicationCycle: '2025-2026',
+            targetEntry: 'September 2027',
+            applicationCycle: '2026-2027',
             applicationMethod: 'OUAC (Ontario Universities\' Application Centre)',
 
             // Website Links
@@ -601,38 +697,38 @@ const CanadianUniversities = {
                 ouac: 'https://www.ouac.on.ca/guide/undergrad-dates/'
             },
 
-            // Key Dates (via OUAC)
+            // Key Dates for September 2027 Entry (via OUAC)
             keyDates: [
                 {
                     event: 'OUAC Application Opens',
-                    date: '2025-10-01',
+                    date: '2026-10-01',
                     time: null,
                     timezone: 'Eastern Time (ET)',
                     importance: 'high',
-                    notes: 'OUAC 101 and 105 applications become available',
+                    notes: 'OUAC 101 and 105 applications become available for September 2027 entry',
                     actionLink: 'https://www.ouac.on.ca/'
                 },
                 {
                     event: 'Early Application Deadline',
-                    date: '2025-11-07',
+                    date: '2026-11-07',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
-                    importance: 'medium',
-                    notes: 'Recommended deadline for early admission consideration',
+                    importance: 'high',
+                    notes: 'Recommended deadline for early admission consideration - APPLY EARLY!',
                     actionLink: 'https://www.ouac.on.ca/'
                 },
                 {
                     event: 'Early Supporting Documents Deadline',
-                    date: '2025-12-02',
+                    date: '2026-12-02',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
-                    importance: 'medium',
+                    importance: 'high',
                     notes: 'Submit supporting documents for early consideration',
                     actionLink: 'https://future.utoronto.ca/apply'
                 },
                 {
                     event: 'OUAC 101 Application Deadline',
-                    date: '2026-01-15',
+                    date: '2027-01-15',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -641,7 +737,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Life Sciences Application Deadline (St. George)',
-                    date: '2026-02-02',
+                    date: '2027-02-02',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -650,7 +746,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Life Sciences Application Deadline (U of T Scarborough)',
-                    date: '2026-03-30',
+                    date: '2027-03-30',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -658,7 +754,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'First Round Offers Begin',
-                    date: '2026-03-01',
+                    date: '2027-03-01',
                     time: null,
                     timezone: 'Eastern Time (ET)',
                     importance: 'high',
@@ -666,7 +762,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Admission Decisions Released',
-                    date: '2026-05-28',
+                    date: '2027-05-28',
                     time: null,
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -674,7 +770,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Earliest Response Deadline',
-                    date: '2026-06-01',
+                    date: '2027-06-01',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -682,11 +778,11 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Program Start',
-                    date: '2026-09-01',
+                    date: '2027-09-01',
                     time: null,
                     timezone: 'Eastern Time (ET)',
                     importance: 'high',
-                    notes: 'Fall semester begins'
+                    notes: 'Fall semester begins - September 2027'
                 }
             ],
 
@@ -695,7 +791,7 @@ const CanadianUniversities = {
                 {
                     step: 1,
                     title: 'Research Programs & Create OUAC Account',
-                    timeline: 'August - October 2025',
+                    timeline: 'July - September 2026',
                     details: [
                         'Explore UofT Life Sciences programs',
                         'Review admission requirements',
@@ -712,7 +808,7 @@ const CanadianUniversities = {
                 {
                     step: 2,
                     title: 'Submit OUAC Application',
-                    timeline: 'October 1, 2025 - January 15, 2026',
+                    timeline: 'October 1, 2026 - January 15, 2027',
                     details: [
                         'Complete OUAC application',
                         'Select University of Toronto',
@@ -720,17 +816,17 @@ const CanadianUniversities = {
                         'Pay application fee'
                     ],
                     actionItems: [
-                        'Submit application by January 15 deadline',
+                        'Submit application by January 15, 2027 deadline',
                         'Select University of Toronto - St. George campus',
                         'Choose Life Sciences admission category (OUAC code: TLG)',
                         'Pay OUAC application fee (~$156 CAD)',
-                        'Submit early by November 7 for consideration'
+                        'Submit early by November 7, 2026 for consideration'
                     ]
                 },
                 {
                     step: 3,
                     title: 'Submit Supporting Documents',
-                    timeline: 'By February 2026',
+                    timeline: 'By February 2027',
                     details: [
                         'Submit transcripts',
                         'Submit English test scores (if required)',
@@ -746,7 +842,7 @@ const CanadianUniversities = {
                 {
                     step: 4,
                     title: 'Application Review',
-                    timeline: 'January - May 2026',
+                    timeline: 'January - May 2027',
                     details: [
                         'Applications reviewed',
                         'Academic assessment',
@@ -761,7 +857,7 @@ const CanadianUniversities = {
                 {
                     step: 5,
                     title: 'Receive & Accept Admission Decision',
-                    timeline: 'March - June 2026',
+                    timeline: 'March - June 2027',
                     details: [
                         'Receive admission offer',
                         'Review offer details',
@@ -778,7 +874,7 @@ const CanadianUniversities = {
                 {
                     step: 6,
                     title: 'Complete First Year & Choose Program',
-                    timeline: 'September 2026 - May 2027',
+                    timeline: 'September 2027 - May 2028',
                     details: [
                         'Complete first-year Life Sciences courses',
                         'Explore different subjects',
@@ -848,8 +944,8 @@ const CanadianUniversities = {
             location: 'Waterloo, Ontario',
             type: 'Undergraduate Program',
             program: 'Bachelor of Science (BSc) - Life Sciences',
-            targetEntry: 'September 2026',
-            applicationCycle: '2025-2026',
+            targetEntry: 'September 2027',
+            applicationCycle: '2026-2027',
             applicationMethod: 'OUAC (101/105)',
 
             // Website Links
@@ -863,29 +959,29 @@ const CanadianUniversities = {
                 housing: 'https://uwaterloo.ca/housing/'
             },
 
-            // Key Dates
+            // Key Dates for September 2027 Entry
             keyDates: [
                 {
                     event: 'Application System Opens',
-                    date: '2025-10-01',
+                    date: '2026-10-01',
                     time: null,
                     timezone: 'Eastern Time (ET)',
                     importance: 'high',
-                    notes: 'OUAC application system opens for 2026 admission',
+                    notes: 'OUAC application system opens for September 2027 admission',
                     actionLink: 'https://www.ouac.on.ca/'
                 },
                 {
                     event: 'Scholarship Application Deadline',
-                    date: '2025-12-15',
+                    date: '2026-12-15',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
-                    importance: 'medium',
-                    notes: 'President\'s Scholarship and other entrance scholarship applications',
+                    importance: 'high',
+                    notes: 'President\'s Scholarship and other entrance scholarship applications - APPLY EARLY!',
                     actionLink: 'https://uwaterloo.ca/undergraduate-admissions/scholarships-awards'
                 },
                 {
                     event: 'Main Application Deadline',
-                    date: '2026-02-01',
+                    date: '2027-02-01',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -894,7 +990,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Application Deadline (Late)',
-                    date: '2026-04-01',
+                    date: '2027-04-01',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'high',
@@ -903,7 +999,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'English Language Proficiency Deadline',
-                    date: '2026-02-15',
+                    date: '2027-02-15',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -912,7 +1008,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Document Submission Deadline',
-                    date: '2026-04-15',
+                    date: '2027-04-15',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -921,7 +1017,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Admission Offers Begin',
-                    date: '2026-02-15',
+                    date: '2027-02-15',
                     time: null,
                     timezone: 'Eastern Time (ET)',
                     importance: 'normal',
@@ -929,7 +1025,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Accept Offer Deadline',
-                    date: '2026-06-01',
+                    date: '2027-06-01',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'critical',
@@ -938,7 +1034,7 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Housing Application Deadline',
-                    date: '2026-06-15',
+                    date: '2027-06-15',
                     time: '11:59 PM',
                     timezone: 'Eastern Time (ET)',
                     importance: 'high',
@@ -947,11 +1043,11 @@ const CanadianUniversities = {
                 },
                 {
                     event: 'Program Start',
-                    date: '2026-09-01',
+                    date: '2027-09-01',
                     time: null,
                     timezone: 'Eastern Time (ET)',
                     importance: 'high',
-                    notes: 'Fall semester begins - early September'
+                    notes: 'Fall semester begins - September 2027'
                 }
             ],
 
@@ -960,7 +1056,7 @@ const CanadianUniversities = {
                 {
                     step: 1,
                     title: 'Research Programs & Prepare',
-                    timeline: 'August - October 2025',
+                    timeline: 'July - September 2026',
                     details: [
                         'Explore Waterloo Life Sciences programs',
                         'Review admission requirements',
@@ -977,7 +1073,7 @@ const CanadianUniversities = {
                 {
                     step: 2,
                     title: 'Submit Application',
-                    timeline: 'October 1, 2025 - February 1, 2026',
+                    timeline: 'October 1, 2026 - February 1, 2027',
                     details: [
                         'Create OUAC account',
                         'Complete online application',
@@ -985,7 +1081,7 @@ const CanadianUniversities = {
                         'Select Waterloo and program choice'
                     ],
                     actionItems: [
-                        'Submit OUAC application by February 1',
+                        'Submit OUAC application by February 1, 2027',
                         'Pay application fee (~$156 CAD)',
                         'Select Life Sciences program (program code)',
                         'Submit English test scores (if required)',
@@ -995,7 +1091,7 @@ const CanadianUniversities = {
                 {
                     step: 3,
                     title: 'Submit Supporting Documents',
-                    timeline: 'By April 15, 2026',
+                    timeline: 'By April 15, 2027',
                     details: [
                         'Submit English language test scores',
                         'Submit transcripts',
@@ -1003,8 +1099,8 @@ const CanadianUniversities = {
                         'Verify document receipt'
                     ],
                     actionItems: [
-                        'Submit IELTS/TOEFL scores by February 15',
-                        'Submit transcripts by April 15',
+                        'Submit IELTS/TOEFL scores by February 15, 2027',
+                        'Submit transcripts by April 15, 2027',
                         'Complete AIF with details about activities and achievements',
                         'Check document status in Quest portal'
                     ]
@@ -1012,7 +1108,7 @@ const CanadianUniversities = {
                 {
                     step: 4,
                     title: 'Wait for Decision',
-                    timeline: 'February - May 2026',
+                    timeline: 'February - May 2027',
                     details: [
                         'Admission decisions released from mid-February',
                         'Check Quest portal for updates',
@@ -1027,7 +1123,7 @@ const CanadianUniversities = {
                 {
                     step: 5,
                     title: 'Accept Offer',
-                    timeline: 'By June 1, 2026',
+                    timeline: 'By June 1, 2027',
                     details: [
                         'Review admission offer',
                         'Accept offer in OUAC system',
@@ -1044,7 +1140,7 @@ const CanadianUniversities = {
                 {
                     step: 6,
                     title: 'Apply for Housing',
-                    timeline: 'By June 15, 2026',
+                    timeline: 'By June 15, 2027',
                     details: [
                         'Complete residence application',
                         'Select preferences',
@@ -1052,7 +1148,7 @@ const CanadianUniversities = {
                         'Review housing options'
                     ],
                     actionItems: [
-                        'Apply for residence by June 15',
+                        'Apply for residence by June 15, 2027',
                         'Complete housing preference questionnaire',
                         'Pay housing deposit (~$600 CAD)',
                         'Research residence options and communities'
@@ -1061,7 +1157,7 @@ const CanadianUniversities = {
                 {
                     step: 7,
                     title: 'Prepare for Enrollment',
-                    timeline: 'June - August 2026',
+                    timeline: 'June - August 2027',
                     details: [
                         'Submit final transcripts',
                         'Complete enrollment steps',
@@ -1069,7 +1165,7 @@ const CanadianUniversities = {
                         'Attend orientation'
                     ],
                     actionItems: [
-                        'Submit final high school transcripts by August',
+                        'Submit final high school transcripts by August 2027',
                         'Complete Quest enrollment checklist',
                         'Register for Fall courses',
                         'Sign up for orientation and Welcome Week'
@@ -1078,7 +1174,7 @@ const CanadianUniversities = {
                 {
                     step: 8,
                     title: 'Start Program',
-                    timeline: 'September 2026',
+                    timeline: 'September 2027',
                     details: [
                         'Move to Waterloo',
                         'Attend orientation',
