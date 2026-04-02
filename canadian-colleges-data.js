@@ -1,6 +1,6 @@
 // Canadian Universities Life Science/Undergraduate Application Data
-// UBC, McGill, University of Toronto, University of Waterloo
-// Data collected on March 21, 2026
+// UBC, McGill, University of Toronto, University of Waterloo, Queen's, McMaster
+// Data collected on March 21, 2026 (Queen's & McMaster added April 2, 2026)
 // Focus: Undergraduate Life Science Programs (Bachelor's Degree)
 // Target Admission: September 2027 Entry
 // Major Application Period: Q3-Q4 2026
@@ -126,6 +126,18 @@ const CanadianUniversities = {
             name: 'University of Waterloo',
             officialUrl: 'https://uwaterloo.ca/undergraduate-admissions/admissions',
             checkUrl: 'https://uwaterloo.ca/undergraduate-admissions/important-dates',
+            updateFrequency: 'weekly'
+        },
+        queens: {
+            name: 'Queen\'s University',
+            officialUrl: 'https://www.queensu.ca/admission/applying',
+            checkUrl: 'https://www.queensu.ca/admission/applying/dates-deadlines',
+            updateFrequency: 'weekly'
+        },
+        mcmaster: {
+            name: 'McMaster University',
+            officialUrl: 'https://future.mcmaster.ca/apply/',
+            checkUrl: 'https://academiccalendars.romcmaster.ca/content.php?catoid=65&navoid=14793',
             updateFrequency: 'weekly'
         }
     },
@@ -1241,6 +1253,539 @@ const CanadianUniversities = {
                 'Quest portal for application status and documents',
                 'Apply by February 1 for best consideration',
                 'Housing guarantee for first-year students who apply by deadline'
+            ]
+        },
+
+        {
+            id: 'can-queens',
+            name: 'Queen\'s University',
+            location: 'Kingston, Ontario',
+            type: 'Undergraduate Program',
+            program: 'Bachelor of Science (BSc) - Life Sciences',
+            targetEntry: 'September 2027',
+            applicationCycle: '2026-2027',
+            applicationMethod: 'OUAC (101/105)',
+
+            // Website Links
+            links: {
+                official: 'https://www.queensu.ca/admission/',
+                application: 'https://www.queensu.ca/admission/applying',
+                deadlines: 'https://www.queensu.ca/admission/applying/dates-deadlines',
+                requirements: 'https://www.queensu.ca/admission/applying/admission-requirements',
+                lifeSciences: 'https://queensu-ca-public.courseleaf.com/arts-science/schools-departments-programs/life-sciences/',
+                tuition: 'https://www.queensu.ca/ughealthycharter/tuition-fees',
+                housing: 'https://www.queensu.ca/residences/'
+            },
+
+            // Key Dates for September 2027 Entry
+            keyDates: [
+                {
+                    event: 'Application System Opens',
+                    date: '2026-10-01',
+                    time: null,
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'high',
+                    notes: 'OUAC application system opens for September 2027 admission',
+                    actionLink: 'https://www.ouac.on.ca/'
+                },
+                {
+                    event: 'Scholarship Recommendation Deadline',
+                    date: '2026-11-20',
+                    time: null,
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'high',
+                    notes: 'Recommended deadline to apply for Main Admission Award (MAA) scholarship - APPLY EARLY!',
+                    actionLink: 'https://www.queensu.ca/admission/applying/scholarsies-awards'
+                },
+                {
+                    event: 'Main Admission Award (MAA) Deadline',
+                    date: '2026-12-08',
+                    time: '11:59 PM',
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'high',
+                    notes: 'Submit MAA application in SOLUS student portal',
+                    actionLink: 'https://www.queensu.ca/admission/applying/scholarsies-awards'
+                },
+                {
+                    event: 'Commerce, Health Science, Nursing Deadline',
+                    date: '2027-02-01',
+                    time: '11:59 PM',
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'critical',
+                    notes: 'OUAC application deadline for Commerce, Health Sciences, and Nursing programs',
+                    actionLink: 'https://www.queensu.ca/admission/applying'
+                },
+                {
+                    event: 'Supplementary Application Deadline',
+                    date: '2027-02-15',
+                    time: '11:59 PM',
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'critical',
+                    notes: 'Deadline for supplementary applications (if required for your program)',
+                    actionLink: 'https://www.queensu.ca/admission/applying/supplementary-application'
+                },
+                {
+                    event: 'All Other Programs Deadline',
+                    date: '2027-03-01',
+                    time: '11:59 PM',
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'critical',
+                    notes: 'OUAC application deadline for all other undergraduate programs including Life Sciences',
+                    actionLink: 'https://www.queensu.ca/admission/applying'
+                },
+                {
+                    event: 'Supporting Documents Deadline',
+                    date: '2027-03-31',
+                    time: '11:59 PM',
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'critical',
+                    notes: 'Submit all transcripts and English language test scores by this date',
+                    actionLink: 'https://www.queensu.ca/admission/applying/how-to-apply'
+                },
+                {
+                    event: 'Ontario Transcripts Deadline',
+                    date: '2027-04-30',
+                    time: null,
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'normal',
+                    notes: 'Queen\'s receives final grades from Ontario high schools via OUAC'
+                },
+                {
+                    event: 'Accept Offer Deadline',
+                    date: '2027-06-01',
+                    time: '11:59 PM',
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'critical',
+                    notes: 'Accept admission offer and pay deposit (check offer letter for exact date)',
+                    actionLink: 'https://www.queensu.ca/admission/accept-offer'
+                },
+                {
+                    event: 'Program Start',
+                    date: '2027-09-01',
+                    time: null,
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'high',
+                    notes: 'Fall semester begins - September 2027'
+                }
+            ],
+
+            // Application Steps
+            applicationSteps: [
+                {
+                    step: 1,
+                    title: 'Research Programs & Prepare',
+                    timeline: 'July - September 2026',
+                    details: [
+                        'Explore Queen\'s Life Sciences programs',
+                        'Review admission requirements',
+                        'Prepare application materials',
+                        'Gather transcripts and test scores'
+                    ],
+                    actionItems: [
+                        'Browse Life Sciences program options',
+                        'Check admission requirements for your education background',
+                        'Prepare personal profile and activities list',
+                        'Order transcripts from high school'
+                    ]
+                },
+                {
+                    step: 2,
+                    title: 'Submit Application',
+                    timeline: 'October 1, 2026 - March 1, 2027',
+                    details: [
+                        'Create OUAC account',
+                        'Complete online application',
+                        'Pay application fee',
+                        'Select Queen\'s and program choice'
+                    ],
+                    actionItems: [
+                        'Submit OUAC application by March 1, 2027 for Life Sciences',
+                        'Pay application fee (~$156 CAD)',
+                        'Select Life Sciences as program choice',
+                        'Submit English test scores (if required)'
+                    ]
+                },
+                {
+                    step: 3,
+                    title: 'Apply for Scholarships',
+                    timeline: 'By December 8, 2026',
+                    details: [
+                        'Submit Main Admission Award (MAA) application',
+                        'Complete scholarship profile in SOLUS',
+                        'Submit required essays'
+                    ],
+                    actionItems: [
+                        'Apply by November 20 for best scholarship consideration',
+                        'Complete MAA application in SOLUS by December 8',
+                        'Submit scholarship essays by deadline'
+                    ]
+                },
+                {
+                    step: 4,
+                    title: 'Submit Supporting Documents',
+                    timeline: 'By March 31, 2027',
+                    details: [
+                        'Submit official transcripts',
+                        'Submit English language test scores',
+                        'Complete supplementary application if required'
+                    ],
+                    actionItems: [
+                        'Submit all transcripts by March 31, 2027',
+                        'Submit IELTS/TOEFL scores by March 31, 2027',
+                        'Check SOLUS portal for document status'
+                    ]
+                },
+                {
+                    step: 5,
+                    title: 'Wait for Decision',
+                    timeline: 'March - May 2027',
+                    details: [
+                        'Applications reviewed by admissions committee',
+                        'Admission decisions released',
+                        'Check SOLUS portal for updates'
+                    ],
+                    actionItems: [
+                        'Monitor SOLUS portal regularly',
+                        'Check application status and updates',
+                        'Prepare for admission decision'
+                    ]
+                },
+                {
+                    step: 6,
+                    title: 'Accept Offer & Apply for Housing',
+                    timeline: 'By June 1, 2027',
+                    details: [
+                        'Review and accept admission offer',
+                        'Pay acceptance deposit',
+                        'Apply for on-campus housing'
+                    ],
+                    actionItems: [
+                        'Accept offer in SOLUS by June 1, 2027',
+                        'Pay acceptance deposit',
+                        'Apply for residence by housing deadline'
+                    ]
+                },
+                {
+                    step: 7,
+                    title: 'Prepare for Enrollment',
+                    timeline: 'June - August 2027',
+                    details: [
+                        'Register for courses',
+                        'Complete enrollment steps',
+                        'Attend orientation',
+                        'Prepare for move-in'
+                    ],
+                    actionItems: [
+                        'Register for courses via SOLUS (summer 2027)',
+                        'Complete enrollment checklist',
+                        'Attend orientation events',
+                        'Prepare for September start'
+                    ]
+                }
+            ],
+
+            // Requirements
+            requirements: {
+                academic: [
+                    'High school graduation',
+                    'GPA: Competitive (typically 85%+ for Life Sciences)',
+                    'English 12 or equivalent',
+                    'Advanced Functions or Pre-calculus 12',
+                    'Two of: Biology 12, Chemistry 12, Physics 12 recommended',
+                    'Prerequisites vary by specific program'
+                ],
+                tests: [
+                    'English proficiency: IELTS 7.0, TOEFL 100 (if international applicant)',
+                    'No MCAT required for undergraduate programs'
+                ],
+                documents: [
+                    'Official high school transcripts',
+                    'English language test scores (if applicable)',
+                    'Supplementary application (for some programs)'
+                ],
+                other: [
+                    'OUAC application fee: ~$156 CAD',
+                    'Apply through OUAC 101 (Ontario) or 105 (International/Other)',
+                    'Main Admission Award (MAA) scholarship requires separate application',
+                    'No reference letters required for most programs'
+                ]
+            },
+
+            // Contact Information
+            contact: {
+                admissionsOffice: 'Undergraduate Admission',
+                email: 'admission@queensu.ca',
+                phone: '+1-613-533-2218',
+                address: '99 University Avenue, Kingston, ON K7L 3N6',
+                ouacContact: 'OUAC: 519-823-1940'
+            },
+
+            // Notes
+            notes: [
+                'Apply through OUAC (centralized Ontario system)',
+                'Life Sciences is a direct-entry program',
+                'Apply by March 1 for Life Sciences (not February 1 like Health Sciences)',
+                'Apply early (November 20) for best scholarship consideration',
+                'Main Admission Award (MAA) requires separate SOLUS application',
+                'Strong emphasis on academic achievement and extracurricular involvement',
+                'SOLUS portal for application status and enrollment',
+                'Kingston is a historic university town with strong student community'
+            ]
+        },
+
+        {
+            id: 'can-mcmaster',
+            name: 'McMaster University',
+            location: 'Hamilton, Ontario',
+            type: 'Undergraduate Program',
+            program: 'Bachelor of Science (BSc) - Life Sciences',
+            targetEntry: 'September 2027',
+            applicationCycle: '2026-2027',
+            applicationMethod: 'OUAC (101/105)',
+
+            // Website Links
+            links: {
+                official: 'https://future.mcmaster.ca/',
+                application: 'https://future.mcmaster.ca/apply/',
+                deadlines: 'https://academiccalendars.romcmaster.ca/content.php?catoid=65&navoid=14793',
+                requirements: 'https://sis.mcmaster.ca/undergraduate/life-sciences/lifesci-admission-requirements/',
+                lifeSciences: 'https://sis.mcmaster.ca/undergraduate/life-sciences/',
+                tuition: 'https://registrar.mcmaster.ca/fees/',
+                housing: 'https://housing.mcmaster.ca/'
+            },
+
+            // Key Dates for September 2027 Entry
+            keyDates: [
+                {
+                    event: 'Application System Opens',
+                    date: '2026-10-01',
+                    time: null,
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'high',
+                    notes: 'OUAC application system opens for September 2027 admission',
+                    actionLink: 'https://www.ouac.on.ca/'
+                },
+                {
+                    event: 'Ontario High School Applicants Recommended Deadline',
+                    date: '2027-01-15',
+                    time: '11:59 PM',
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'high',
+                    notes: 'Recommended deadline for Ontario high school students - APPLY EARLY!',
+                    actionLink: 'https://www.ouac.on.ca/'
+                },
+                {
+                    event: 'Main Application Deadline',
+                    date: '2027-02-01',
+                    time: '11:59 PM',
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'critical',
+                    notes: 'Equal consideration deadline for most programs including Life Sciences',
+                    actionLink: 'https://future.mcmaster.ca/apply/'
+                },
+                {
+                    event: 'Supporting Documents Deadline',
+                    date: '2027-02-15',
+                    time: '11:59 PM',
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'critical',
+                    notes: 'Submit all required transcripts and English test scores',
+                    actionLink: 'https://future.mcmaster.ca/apply/'
+                },
+                {
+                    event: 'Final Application Deadline',
+                    date: '2027-04-01',
+                    time: '11:59 PM',
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'high',
+                    notes: 'Final deadline for applications and documents - space permitting after this date',
+                    actionLink: 'https://academiccalendars.romcmaster.ca/content.php?catoid=65&navoid=14793'
+                },
+                {
+                    event: 'Admission Offers Begin',
+                    date: '2027-02-15',
+                    time: null,
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'normal',
+                    notes: 'Admission decisions begin to be released from mid-February'
+                },
+                {
+                    event: 'Accept Offer Deadline',
+                    date: '2027-06-01',
+                    time: '11:59 PM',
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'critical',
+                    notes: 'Accept admission offer by this date (check offer letter for exact deadline)',
+                    actionLink: 'https://future.mcmaster.ca/accept-offer/'
+                },
+                {
+                    event: 'Housing Application Deadline',
+                    date: '2027-06-15',
+                    time: '11:59 PM',
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'high',
+                    notes: 'First-year residence application deadline',
+                    actionLink: 'https://housing.mcmaster.ca/'
+                },
+                {
+                    event: 'Program Start',
+                    date: '2027-09-01',
+                    time: null,
+                    timezone: 'Eastern Time (ET)',
+                    importance: 'high',
+                    notes: 'Fall semester begins - September 2027'
+                }
+            ],
+
+            // Application Steps
+            applicationSteps: [
+                {
+                    step: 1,
+                    title: 'Research Programs & Prepare',
+                    timeline: 'July - September 2026',
+                    details: [
+                        'Explore McMaster Life Sciences programs',
+                        'Review admission requirements',
+                        'Prepare application materials',
+                        'Gather transcripts and test scores'
+                    ],
+                    actionItems: [
+                        'Browse Life Sciences program options (5 different specializations)',
+                        'Check admission requirements for your education background',
+                        'Prepare for potential supplementary requirements',
+                        'Order transcripts from high school'
+                    ]
+                },
+                {
+                    step: 2,
+                    title: 'Submit Application',
+                    timeline: 'October 1, 2026 - February 1, 2027',
+                    details: [
+                        'Create OUAC account',
+                        'Complete online application',
+                        'Pay application fee',
+                        'Select McMaster and program choice'
+                    ],
+                    actionItems: [
+                        'Submit OUAC application by February 1, 2027',
+                        'Pay application fee (~$156 CAD)',
+                        'Select Life Sciences as program choice',
+                        'Apply by January 15 for best consideration'
+                    ]
+                },
+                {
+                    step: 3,
+                    title: 'Submit Supporting Documents',
+                    timeline: 'By February 15, 2027',
+                    details: [
+                        'Submit official transcripts',
+                        'Submit English language test scores',
+                        'Verify document receipt in portal'
+                    ],
+                    actionItems: [
+                        'Submit all transcripts by February 15, 2027',
+                        'Submit IELTS/TOEFL scores by February 15, 2027',
+                        'Check McMaster applicant portal for document status'
+                    ]
+                },
+                {
+                    step: 4,
+                    title: 'Wait for Decision',
+                    timeline: 'February - May 2027',
+                    details: [
+                        'Applications reviewed by admissions committee',
+                        'Admission decisions released from mid-February',
+                        'Monitor applicant portal for updates'
+                    ],
+                    actionItems: [
+                        'Monitor McMaster applicant portal regularly',
+                        'Check for admission updates and decisions',
+                        'Prepare for potential scholarship offers'
+                    ]
+                },
+                {
+                    step: 5,
+                    title: 'Accept Offer & Apply for Housing',
+                    timeline: 'By June 1, 2027',
+                    details: [
+                        'Review and accept admission offer',
+                        'Pay acceptance deposit',
+                        'Apply for on-campus housing'
+                    ],
+                    actionItems: [
+                        'Accept offer by June 1, 2027 deadline',
+                        'Pay acceptance deposit',
+                        'Apply for residence by June 15, 2027'
+                    ]
+                },
+                {
+                    step: 6,
+                    title: 'Prepare for Enrollment',
+                    timeline: 'June - August 2027',
+                    details: [
+                        'Register for courses',
+                        'Complete enrollment steps',
+                        'Attend orientation',
+                        'Prepare for move-in'
+                    ],
+                    actionItems: [
+                        'Register for courses via Mosaic (summer 2027)',
+                        'Complete enrollment checklist',
+                        'Attend Welcome Week activities',
+                        'Prepare for September start'
+                    ]
+                }
+            ],
+
+            // Requirements
+            requirements: {
+                academic: [
+                    'High school graduation',
+                    'GPA: Competitive (typically 85%+ for Life Sciences)',
+                    'English 12 or equivalent (ENG4U)',
+                    'Advanced Functions (MHF4U) or Calculus (MCV4U)',
+                    'Two of: Biology (SBI4U), Chemistry (SCH4U), Physics (SPH4U)',
+                    'Prerequisites vary by specific Life Sciences specialization'
+                ],
+                tests: [
+                    'English proficiency: IELTS 7.0, TOEFL 100 (if international applicant)',
+                    'No supplementary application required for Life Sciences (unlike Health Sciences)',
+                    'No MCAT required for undergraduate programs'
+                ],
+                documents: [
+                    'Official high school transcripts',
+                    'English language test scores (if applicable)',
+                    'No supplementary application required for Life Sciences'
+                ],
+                other: [
+                    'OUAC application fee: ~$156 CAD',
+                    'Apply through OUAC 101 (Ontario) or 105 (International/Other)',
+                    'Life Sciences does NOT require supplementary application',
+                    '5 specializations available in Level II: Honours Life Sciences, Honours Life Sciences Co-op, Bachelor of Life Sciences, Honours Life Sciences - Origins of Disease, and more',
+                    'Strong research-focused university'
+                ]
+            },
+
+            // Contact Information
+            contact: {
+                admissionsOffice: 'Undergraduate Admissions',
+                email: 'future@mcmaster.ca',
+                phone: '+1-905-525-4600',
+                address: '1280 Main Street West, Hamilton, ON L8S 4L8',
+                ouacContact: 'OUAC: 519-823-1940'
+            },
+
+            // Notes
+            notes: [
+                'Apply through OUAC (centralized Ontario system)',
+                'Life Sciences does NOT require supplementary application (unlike Health Sciences)',
+                '5 different specializations available in Level II (after first year)',
+                'Strong emphasis on research and interdisciplinary learning',
+                'Hamilton is a medium-sized city with affordable living costs',
+                'Apply by January 15 for best consideration',
+                'Co-op option available for Honours Life Sciences',
+                'Mosaic portal for application status and enrollment',
+                'Known for problem-based learning approach'
             ]
         }
     ]

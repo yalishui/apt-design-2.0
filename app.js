@@ -254,7 +254,9 @@ function populateCanadianCollegeList(subTabId, view) {
         'canadian-ubc': 'canadianUBCList',
         'canadian-mcgill': 'canadianMcGillList',
         'canadian-uoft': 'canadianUofTList',
-        'canadian-waterloo': 'canadianWaterlooList'
+        'canadian-waterloo': 'canadianWaterlooList',
+        'canadian-queens': 'canadianQueensList',
+        'canadian-mcmaster': 'canadianMcMasterList'
     };
 
     const listContainer = document.getElementById(listIdMap[subTabId]);
@@ -274,6 +276,10 @@ function populateCanadianCollegeList(subTabId, view) {
         universities = CanadianUniversities.universities.filter(u => u.id === 'can-uoft');
     } else if (subTabId === 'canadian-waterloo') {
         universities = CanadianUniversities.universities.filter(u => u.id === 'can-waterloo');
+    } else if (subTabId === 'canadian-queens') {
+        universities = CanadianUniversities.universities.filter(u => u.id === 'can-queens');
+    } else if (subTabId === 'canadian-mcmaster') {
+        universities = CanadianUniversities.universities.filter(u => u.id === 'can-mcmaster');
     }
 
     if (universities.length === 0) {

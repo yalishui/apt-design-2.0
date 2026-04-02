@@ -5,7 +5,7 @@ A personal calendar tool for managing important dates, test schedules, and colle
 ## Current Version: Design 2.0 ✅
 
 **Status**: Locked (Production)  
-**Last Updated**: March 21, 2026
+**Last Updated**: April 2, 2026 (Added Queen's & McMaster)
 
 ---
 
@@ -16,7 +16,7 @@ A personal calendar tool for managing important dates, test schedules, and colle
 - ✅ **Multi-Tab Navigation**: Organized by category
 - ✅ **Important Dates Tracking**: All your key dates in one place
 - ✅ **Test Schedule Management**: UCAT, SAT, IELTS dates
-- ✅ **Canadian Universities**: Complete application tracking for 4 universities
+- ✅ **Canadian Universities**: Complete application tracking for 6 universities
 - ✅ **Hong Kong Holidays**: Built-in public holiday calendar
 - ✅ **Birthday Management**: Track family birthdays
 - ✅ **Local Storage**: All data saved locally, no backend needed
@@ -31,6 +31,8 @@ A personal calendar tool for managing important dates, test schedules, and colle
    - McGill University
    - University of Toronto (UofT)
    - University of Waterloo
+   - Queen's University
+   - McMaster University
 3. **🏙️ HK** - Hong Kong public holidays (2026)
 4. **📚 UCAT** - UCAT 2026 test dates and deadlines
 5. **✍️ SAT** - SAT 2026 test dates and deadlines
@@ -60,7 +62,7 @@ Each university includes:
 ### Navigate the Calendar
 
 1. **Switch Tabs**: Click on any tab button to view different date categories
-2. **Canadian Sub-Tabs**: Under Canadian tab, choose All/UBC/McGill/UofT/Waterloo
+2. **Canadian Sub-Tabs**: Under Canadian tab, choose All/UBC/McGill/UofT/Waterloo/Queen's/McMaster
 3. **View Modes**: Toggle between Label View (compact) and Detail View (full cards)
 4. **View Details**: Click any date card or university to see complete information
 5. **Access Links**: Use quick links in modals to visit official websites
@@ -161,6 +163,11 @@ APT-Design-2.0/
 ---
 
 ## Version History
+
+### v2.0 Update (April 2, 2026)
+- ✅ Added Queen's University (Kingston, Ontario)
+- ✅ Added McMaster University (Hamilton, Ontario)
+- ✅ Expanded Canadian universities from 4 to 6
 
 ### v2.0 (March 21, 2026) - Current ✅
 - ✅ Canadian universities integration (4 universities)
