@@ -2870,3 +2870,119 @@ header h1 {
     font-variant-numeric: tabular-nums;
 }
 
+/* ─── IB Subject Filter Panel ──────────────────────────────── */
+
+.ib-filter-panel {
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-secondary);
+}
+
+.ib-filter-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0.75rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    user-select: none;
+    transition: background 0.15s;
+}
+
+.ib-filter-toggle:hover {
+    background: var(--card-hover);
+}
+
+.ib-filter-arrow {
+    font-size: 0.65rem;
+    transition: transform 0.2s;
+}
+
+.ib-filter-body {
+    display: none;
+    padding: 0.5rem 0.75rem 0.75rem;
+    border-top: 1px solid var(--border);
+}
+
+.ib-filter-body.open {
+    display: block;
+}
+
+.ib-filter-actions {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.ib-filter-btn {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.72rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.ib-filter-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.ib-subject-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.ib-subject-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.72rem;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--bg);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+}
+
+.ib-subject-chip:hover {
+    border-color: var(--primary);
+}
+
+.ib-subject-chip.selected {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.ib-subject-chip input[type="checkbox"] {
+    display: none;
+}
+
+/* Day sections with matching exams */
+.ib-day-section.has-match {
+    border-left: 3px solid var(--primary);
+}
+
+.ib-day-section.has-match .ib-day-header {
+    background: rgba(59, 130, 246, 0.08);
+}
+
+/* Highlighted exam row */
+.ib-exam-row.highlight {
+    background: rgba(59, 130, 246, 0.08);
+    border-left: 3px solid var(--primary);
+}
+
+.ib-exam-row.highlight:hover {
+    background: rgba(59, 130, 246, 0.15);
+}
+

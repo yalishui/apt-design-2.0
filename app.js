@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeCollegeApps();
     populateCalendar();
     populateCanadianColleges();
+    initIBFilter();
     populateIBExams();
     setupEventListeners();
 });
@@ -846,32 +847,125 @@ window.toggleTaskStatus = toggleTaskStatus;
 
 // ─── IB Exam Schedule ───────────────────────────────────────────────
 
+const IB_STORAGE_KEY = 'ibMySubjects';
+
+function getIBMySubjects() {
+    try {
+        const data = localStorage.getItem(IB_STORAGE_KEY);
+        return data ? JSON.parse(data) : [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function saveIBMySubjects(subjects) {
+    localStorage.setItem(IB_STORAGE_KEY, JSON.stringify(subjects));
+}
+
+// Build a deduped list of all subjects from the schedule
+function getUniqueIBSubjects() {
+    const seen = new Set();
+    const list = [];
+    IBExamSchedule.weeks.forEach(w => {
+        w.days.forEach(d => {
+            d.sessions.forEach(s => {
+                s.exams.forEach(e => {
+                    const key = e.subject;
+                    if (!seen.has(key)) {
+                        seen.add(key);
+                        list.push(key);
+                    }
+                });
+            });
+        });
+    });
+    return list.sort();
+}
+
+function initIBFilter() {
+    const toggle = document.getElementById('ibFilterToggle');
+    const arrow = document.getElementById('ibFilterArrow');
+    const body = document.getElementById('ibFilterBody');
+    const chipsContainer = document.getElementById('ibSubjectChips');
+    const btnAll = document.getElementById('ibSelectAll');
+    const btnClear = document.getElementById('ibClearAll');
+
+    if (!toggle || !chipsContainer) return;
+
+    // Toggle panel
+    let panelOpen = false;
+    toggle.addEventListener('click', () => {
+        panelOpen = !panelOpen;
+        body.classList.toggle('open', panelOpen);
+        arrow.textContent = panelOpen ? '▲' : '▼';
+    });
+
+    // Render chips
+    const allSubjects = getUniqueIBSubjects();
+    const mySubjects = getIBMySubjects();
+
+    function renderChips() {
+        chipsContainer.innerHTML = '';
+        allSubjects.forEach(subject => {
+            const chip = document.createElement('label');
+            chip.className = 'ib-subject-chip' + (mySubjects.includes(subject) ? ' selected' : '');
+            chip.innerHTML = `
+                <input type="checkbox" value="${subject}" ${mySubjects.includes(subject) ? 'checked' : ''}>
+                <span>${subject}</span>
+            `;
+            chip.querySelector('input').addEventListener('change', () => {
+                const current = getIBMySubjects();
+                if (chip.querySelector('input').checked) {
+                    if (!current.includes(subject)) current.push(subject);
+                } else {
+                    const idx = current.indexOf(subject);
+                    if (idx > -1) current.splice(idx, 1);
+                }
+                saveIBMySubjects(current);
+                renderChips();
+                populateIBExams();
+            });
+            chipsContainer.appendChild(chip);
+        });
+    }
+
+    renderChips();
+
+    btnAll.addEventListener('click', () => {
+        saveIBMySubjects([...allSubjects]);
+        renderChips();
+        populateIBExams();
+    });
+
+    btnClear.addEventListener('click', () => {
+        saveIBMySubjects([]);
+        renderChips();
+        populateIBExams();
+    });
+}
+
 function populateIBExams() {
     const container = document.getElementById('ibSchedule');
     if (!container) return;
     container.innerHTML = '';
 
-    const schedule = IBExamSchedule;
+    const mySubjects = getIBMySubjects();
+    const hasFilter = mySubjects.length > 0;
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
     schedule.weeks.forEach(week => {
-        // Build week section
         const weekSection = document.createElement('div');
         weekSection.className = 'ib-week-section';
 
-        // Week header
         const weekHeader = document.createElement('div');
         weekHeader.className = 'ib-week-header';
-        const weekStart = new Date(week.startDate);
-        const weekEnd = new Date(week.endDate);
         weekHeader.innerHTML = `
             <div class="ib-week-label">${week.label}</div>
             <div class="ib-week-dates">${formatDate(week.startDate)} — ${formatDate(week.endDate)}</div>
         `;
         weekSection.appendChild(weekHeader);
 
-        // Days
         week.days.forEach(day => {
             const examDate = new Date(day.date);
             const daysLeft = Math.ceil((examDate - today) / (1000 * 60 * 60 * 24));
@@ -880,22 +974,31 @@ function populateIBExams() {
             const isUrgent = daysLeft >= 0 && daysLeft <= 7;
             const isSoon = daysLeft > 7 && daysLeft <= 30;
 
-            const daySection = document.createElement('div');
             let urgencyClass = 'normal';
             if (isPast) urgencyClass = 'past';
             else if (isToday) urgencyClass = 'today';
             else if (isUrgent) urgencyClass = 'urgent';
             else if (isSoon) urgencyClass = 'soon';
 
-            daySection.className = `ib-day-section ${urgencyClass}`;
+            // Check if this day has any matching exams (when filter is active)
+            let dayHasMatch = !hasFilter;
+            if (hasFilter) {
+                day.sessions.forEach(s => {
+                    s.exams.forEach(e => {
+                        if (mySubjects.includes(e.subject)) dayHasMatch = true;
+                    });
+                });
+            }
 
-            // Day header
+            const daySection = document.createElement('div');
+            daySection.className = `ib-day-section ${urgencyClass}` + (dayHasMatch && hasFilter ? ' has-match' : '');
+
             const dayHeader = document.createElement('div');
             dayHeader.className = 'ib-day-header';
 
             let daysLabel = '';
             if (isPast) daysLabel = '✓ Past';
-            else if (isToday) daysLabel = '📍 Today';
+            else if (isToday) daysLabel = '📅 Today';
             else daysLabel = `${daysLeft} days`;
 
             dayHeader.innerHTML = `
@@ -907,8 +1010,14 @@ function populateIBExams() {
             `;
             daySection.appendChild(dayHeader);
 
-            // Sessions
             day.sessions.forEach(session => {
+                // Filter sessions: if filter active, only show sessions with matching exams
+                let sessionExams = session.exams;
+                if (hasFilter) {
+                    sessionExams = sessionExams.filter(e => mySubjects.includes(e.subject));
+                }
+                if (sessionExams.length === 0) return;
+
                 const sessionDiv = document.createElement('div');
                 sessionDiv.className = 'ib-session';
 
@@ -920,25 +1029,29 @@ function populateIBExams() {
                         <span class="ib-session-time">${session.time}</span>
                     </div>
                     <div class="ib-exam-list">
-                        ${session.exams.map(exam => createIBExamRow(exam, isPast)).join('')}
+                        ${sessionExams.map(exam => createIBExamRow(exam, isPast, mySubjects)).join('')}
                     </div>
                 `;
                 daySection.appendChild(sessionDiv);
             });
 
-            weekSection.appendChild(daySection);
+            // Only add day if it has visible exams (when filter is active)
+            if (!hasFilter || dayHasMatch) {
+                weekSection.appendChild(daySection);
+            }
         });
 
         container.appendChild(weekSection);
     });
 }
 
-function createIBExamRow(exam, isPast) {
+function createIBExamRow(exam, isPast, mySubjects) {
     const subjectShort = shortenSubject(exam.subject);
+    const isHighlight = mySubjects && mySubjects.includes(exam.subject);
     return `
-        <div class="ib-exam-row ${isPast ? 'past-exam' : ''}">
+        <div class="ib-exam-row ${isPast ? 'past-exam' : ''} ${isHighlight ? 'highlight' : ''}" title="${exam.subject} ${exam.level} ${exam.paper}">
             <span class="ib-exam-level">${exam.level}</span>
-            <span class="ib-exam-name" title="${exam.subject} ${exam.level} ${exam.paper}">${subjectShort}</span>
+            <span class="ib-exam-name">${subjectShort}</span>
             <span class="ib-exam-paper">${exam.paper}</span>
             <span class="ib-exam-duration">${exam.duration}</span>
         </div>
