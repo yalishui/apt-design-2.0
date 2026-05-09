@@ -954,6 +954,7 @@ function populateIBExams() {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
+    const schedule = IBExamSchedule;
     schedule.weeks.forEach(week => {
         const weekSection = document.createElement('div');
         weekSection.className = 'ib-week-section';
