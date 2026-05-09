@@ -1,7 +1,7 @@
 {
-  "name": "APT - Voice Assistant & Calendar",
+  "name": "APT - Academic Planning Tracker",
   "short_name": "APT",
-  "description": "Personal assistant with voice input for notes, reminders, and calendar",
+  "description": "Academic planning tool for UCAT, SAT, IELTS, IB exams and Canadian university applications",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0F172A",

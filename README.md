@@ -37,7 +37,8 @@ A personal calendar tool for managing important dates, test schedules, and colle
 4. **📚 UCAT** - UCAT 2026 test dates and deadlines
 5. **✍️ SAT** - SAT 2026 test dates and deadlines
 6. **🌍 IELTS** - IELTS 2026 test dates (Paper-based & Computer-delivered)
-7. **🎂** - Birthday reminders
+7. **🎯 IB** - IB May 2027 Final Exam Schedule (Zone A, Hong Kong)
+8. **🎂** - Birthday reminders
 
 ### Canadian Universities Features
 

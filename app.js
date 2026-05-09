@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeCollegeApps();
     populateCalendar();
     populateCanadianColleges();
+    populateIBExams();
     setupEventListeners();
 });
 
@@ -842,3 +843,141 @@ function escapeHtml(text) {
 
 // Make functions globally available
 window.toggleTaskStatus = toggleTaskStatus;
+
+// ─── IB Exam Schedule ───────────────────────────────────────────────
+
+function populateIBExams() {
+    const container = document.getElementById('ibSchedule');
+    if (!container) return;
+    container.innerHTML = '';
+
+    const schedule = IBExamSchedule;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    schedule.weeks.forEach(week => {
+        // Build week section
+        const weekSection = document.createElement('div');
+        weekSection.className = 'ib-week-section';
+
+        // Week header
+        const weekHeader = document.createElement('div');
+        weekHeader.className = 'ib-week-header';
+        const weekStart = new Date(week.startDate);
+        const weekEnd = new Date(week.endDate);
+        weekHeader.innerHTML = `
+            <div class="ib-week-label">${week.label}</div>
+            <div class="ib-week-dates">${formatDate(week.startDate)} — ${formatDate(week.endDate)}</div>
+        `;
+        weekSection.appendChild(weekHeader);
+
+        // Days
+        week.days.forEach(day => {
+            const examDate = new Date(day.date);
+            const daysLeft = Math.ceil((examDate - today) / (1000 * 60 * 60 * 24));
+            const isPast = daysLeft < 0;
+            const isToday = daysLeft === 0;
+            const isUrgent = daysLeft >= 0 && daysLeft <= 7;
+            const isSoon = daysLeft > 7 && daysLeft <= 30;
+
+            const daySection = document.createElement('div');
+            let urgencyClass = 'normal';
+            if (isPast) urgencyClass = 'past';
+            else if (isToday) urgencyClass = 'today';
+            else if (isUrgent) urgencyClass = 'urgent';
+            else if (isSoon) urgencyClass = 'soon';
+
+            daySection.className = `ib-day-section ${urgencyClass}`;
+
+            // Day header
+            const dayHeader = document.createElement('div');
+            dayHeader.className = 'ib-day-header';
+
+            let daysLabel = '';
+            if (isPast) daysLabel = '✓ Past';
+            else if (isToday) daysLabel = '📍 Today';
+            else daysLabel = `${daysLeft} days`;
+
+            dayHeader.innerHTML = `
+                <div class="ib-day-info">
+                    <div class="ib-day-name">${day.dayName}</div>
+                    <div class="ib-day-date">${formatDate(day.date)}</div>
+                </div>
+                <div class="ib-day-countdown ${urgencyClass}">${daysLabel}</div>
+            `;
+            daySection.appendChild(dayHeader);
+
+            // Sessions
+            day.sessions.forEach(session => {
+                const sessionDiv = document.createElement('div');
+                sessionDiv.className = 'ib-session';
+
+                const periodClass = session.period === 'Morning' ? 'morning' : 'afternoon';
+                sessionDiv.innerHTML = `
+                    <div class="ib-session-header ${periodClass}">
+                        <span class="ib-session-icon">${session.period === 'Morning' ? '☀️' : '🌙'}</span>
+                        <span class="ib-session-period">${session.period}</span>
+                        <span class="ib-session-time">${session.time}</span>
+                    </div>
+                    <div class="ib-exam-list">
+                        ${session.exams.map(exam => createIBExamRow(exam, isPast)).join('')}
+                    </div>
+                `;
+                daySection.appendChild(sessionDiv);
+            });
+
+            weekSection.appendChild(daySection);
+        });
+
+        container.appendChild(weekSection);
+    });
+}
+
+function createIBExamRow(exam, isPast) {
+    const subjectShort = shortenSubject(exam.subject);
+    return `
+        <div class="ib-exam-row ${isPast ? 'past-exam' : ''}">
+            <span class="ib-exam-level">${exam.level}</span>
+            <span class="ib-exam-name" title="${exam.subject} ${exam.level} ${exam.paper}">${subjectShort}</span>
+            <span class="ib-exam-paper">${exam.paper}</span>
+            <span class="ib-exam-duration">${exam.duration}</span>
+        </div>
+    `;
+}
+
+function shortenSubject(subject) {
+    const map = {
+        'Language A Literature': 'Lang A Lit',
+        'Language A Language & Literature': 'Lang A L&L',
+        'Language & Culture': 'Lang & Culture',
+        'Language B': 'Lang B',
+        'Language ab initio': 'Lang ab initio',
+        'English A Literature': 'Eng A Lit',
+        'English A Language & Literature': 'Eng A L&L',
+        'English B': 'Eng B',
+        'English ab initio': 'Eng ab initio',
+        'Spanish A Literature': 'Span A Lit',
+        'Spanish A Language & Literature': 'Span A L&L',
+        'Spanish B': 'Span B',
+        'Spanish ab initio': 'Span ab initio',
+        'French A Literature': 'Fr A Lit',
+        'French A Language & Literature': 'Fr A L&L',
+        'French B': 'Fr B',
+        'French ab initio': 'Fr ab initio',
+        'Social & Cultural Anthropology': 'Soc & Cult Anthro',
+        'Environmental Systems & Societies': 'ESS',
+        'Sports, Exercise & Health Science': 'SEHS',
+        'Computer Science': 'CS',
+        'Business Management': 'BM',
+        'Design Technology': 'DT',
+        'Digital Society': 'Digital Society',
+        'Global Politics': 'Global Politics',
+        'Classical Greek': 'Class Greek',
+        'World Religions': 'World Religions',
+        'Literature & Performance': 'Lit & Perf',
+        'School-based Syllabus': 'SBS'
+    };
+    return map[subject] || subject;
+}
+
+// ─── Utility ────────────────────────────────────────────────────────

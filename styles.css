@@ -2614,3 +2614,259 @@ header h1 {
         display: none;
     }
 }
+
+/* ─── IB Exam Schedule Tab ─────────────────────────────────────────── */
+
+#ibTab {
+    padding: 0;
+}
+
+.ib-header {
+    padding: 1.25rem;
+    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
+    border-bottom: 1px solid var(--border);
+}
+
+.ib-header h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.ib-overview {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.ib-zone-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.ib-time-badge {
+    background: var(--bg-secondary);
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.ib-source {
+    margin-left: auto;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.ib-schedule {
+    padding: 0.75rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Week Section */
+.ib-week-section {
+    margin-bottom: 1.5rem;
+}
+
+.ib-week-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid var(--primary);
+}
+
+.ib-week-label {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--primary);
+}
+
+.ib-week-dates {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+}
+
+/* Day Section */
+.ib-day-section {
+    margin-bottom: 0.75rem;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: border-color 0.2s;
+}
+
+.ib-day-section.urgent {
+    border-color: var(--danger);
+}
+
+.ib-day-section.urgent .ib-day-header {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.ib-day-section.today {
+    border-color: var(--accent);
+    background: rgba(245, 158, 11, 0.05);
+}
+
+.ib-day-section.today .ib-day-header {
+    background: rgba(245, 158, 11, 0.12);
+}
+
+.ib-day-section.soon .ib-day-header {
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.ib-day-section.past {
+    opacity: 0.5;
+}
+
+.ib-day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0.75rem;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+}
+
+.ib-day-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.ib-day-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.ib-day-date {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.ib-day-countdown {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    background: var(--bg);
+}
+
+.ib-day-countdown.urgent { color: var(--danger); background: rgba(239,68,68,0.1); }
+.ib-day-countdown.soon { color: var(--accent); background: rgba(245,158,11,0.1); }
+.ib-day-countdown.today { color: var(--accent); background: rgba(245,158,11,0.15); }
+.ib-day-countdown.normal { color: var(--text-secondary); }
+.ib-day-countdown.past { color: var(--text-secondary); opacity: 0.6; }
+
+/* Session */
+.ib-session {
+    border-bottom: 1px solid var(--border);
+}
+
+.ib-session:last-child {
+    border-bottom: none;
+}
+
+.ib-session-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: var(--bg);
+}
+
+.ib-session-header.morning {
+    color: #fbbf24;
+}
+
+.ib-session-header.afternoon {
+    color: #818cf8;
+}
+
+.ib-session-icon {
+    font-size: 0.85rem;
+}
+
+.ib-session-period {
+    flex: 1;
+}
+
+.ib-session-time {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+/* Exam List */
+.ib-exam-list {
+    padding: 0.35rem 0;
+}
+
+.ib-exam-row {
+    display: grid;
+    grid-template-columns: 44px 1fr auto auto;
+    gap: 0.4rem;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.82rem;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    transition: background 0.15s;
+}
+
+.ib-exam-row:last-child {
+    border-bottom: none;
+}
+
+.ib-exam-row:hover {
+    background: var(--bg-secondary);
+}
+
+.ib-exam-row.past-exam {
+    opacity: 0.5;
+}
+
+.ib-exam-level {
+    font-size: 0.72rem;
+    font-weight: 700;
+    background: var(--bg-secondary);
+    color: var(--primary);
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.ib-exam-name {
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ib-exam-paper {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-align: right;
+    white-space: nowrap;
+}
+
+.ib-exam-duration {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    min-width: 52px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
